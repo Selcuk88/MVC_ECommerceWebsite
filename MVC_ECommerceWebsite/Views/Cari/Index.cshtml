@@ -1,0 +1,33 @@
+﻿@using MVC_ECommerceWebsite.Models.Siniflar
+@model List<Cari>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>Cari ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (Cari c in Model) { 
+    <tr>
+        <td>@c.Cariid</td>
+        <td>@c.CariAd</td>
+        <td>@c.CariSoyad</td>
+        <td>@c.CariSehir</td>
+        <td>@c.CariMail</td>
+        <td><a href="/Cari/CariSil/@c.Cariid" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Cari/CariGetir/@c.Cariid" class="btn btn-warning">Güncelle</a></td>
+        <td><a href="#" class="btn btn-default" style="background-color:maroon; color:white; font-weight:bold">Satışlar Geçmişi</a></td>        
+    </tr>
+    }
+</table>
+
+<a href="/Cari/YeniCariEkle/" class="btn btn-default" style="background-color:darkblue; color:white">Yeni Cari Ekle</a>

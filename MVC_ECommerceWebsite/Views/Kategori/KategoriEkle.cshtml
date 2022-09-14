@@ -1,0 +1,20 @@
+﻿@model MVC_ECommerceWebsite.Models.Siniflar.Kategori
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kategori Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+
+    @*Html helper kullanıyoruz.*@
+
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>

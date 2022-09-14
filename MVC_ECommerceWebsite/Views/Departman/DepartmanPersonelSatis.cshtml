@@ -1,0 +1,38 @@
+﻿@using MVC_ECommerceWebsite.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "DepartmanPersonelSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Departman Personel Satış Detayları</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> Personel: @ViewBag.personelAd </li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Satış ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Fiyat</th>
+        <th>Adet</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Yazdır</th>
+    </tr>
+    @foreach (SatisHareket s in Model)
+    {
+        <tr>
+            <td>@s.Satisid</td>
+            <td>@s.Urun.UrunAd</td>
+            <td>@s.Cari.CariAd @s.Cari.CariSoyad</td>
+            <td>@s.Fiyat</td>
+            <td>@s.Adet</td>
+            <td>@s.ToplamTutar</td>
+            <td>@s.Tarih</td>
+            <td><a href="#" class="btn btn-default" style="background-color:burlywood; color:white">Yazdır</a></td>
+        </tr>
+    }
+</table>
