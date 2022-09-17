@@ -1,22 +1,21 @@
 ﻿@using MVC_ECommerceWebsite.Models.Siniflar
 @model List<SatisHareket>
-
 @{
-    ViewBag.Title = "DepartmanPersonelSatis";
+    ViewBag.Title = "MusteriSatis";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <br />
-<h2>Departman Personel Satış Detayları</h2>
+<h2>Müşteri Satış Hareketleri</h2>
 <br />
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active"> Personel: @ViewBag.personelAd </li>
+    <li class="breadcrumb-item active"> Cari: @ViewBag.cari </li>
 </ol>
 <table class="table table-condensed">
     <tr>
         <th>Satış ID</th>
-        <th>Ürün</th>
-        <th>Cari</th>
+        <th>Ürün</th>        
+        <th>Personel</th>        
         <th>Fiyat</th>
         <th>Adet</th>
         <th>Toplam</th>
@@ -28,7 +27,7 @@
         <tr>
             <td>@s.Satisid</td>
             <td>@s.Urun.UrunAd</td>
-            <td>@s.Cari.CariAd @s.Cari.CariSoyad</td>
+            <td>@s.Personel.PersonelAd @s.Personel.PersonelSoyad</td>
             <td>@s.Fiyat</td>
             <td>@s.Adet</td>
             <td>@s.ToplamTutar</td>

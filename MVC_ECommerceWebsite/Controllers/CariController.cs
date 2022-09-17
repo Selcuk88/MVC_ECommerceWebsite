@@ -52,5 +52,12 @@ namespace MVC_ECommerceWebsite.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MusteriSatis (int id)
+        {
+            var satislar = context.SatisHareketler.Where(x => x.Cariid == id).ToList();
+            Cari cari = context.Cariler.Find(id);
+            ViewBag.cari = cari.CariAd + " " + cari.CariSoyad;
+            return View(satislar);
+        }
     }
 }

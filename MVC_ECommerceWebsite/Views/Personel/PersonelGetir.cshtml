@@ -1,0 +1,31 @@
+﻿@model MVC_ECommerceWebsite.Models.Siniflar.Personel
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Personel Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.Personelid)
+        @Html.LabelFor(x => x.PersonelAd)
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSoyad)
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelGorsel)
+        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(p => p.Departmanid, (List<SelectListItem>)ViewBag.Deger1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-default" style="background-color:darkgreen; color:white; font-weight:bold ">Güncelle</button>
+    </div>
+
+
+}
+
